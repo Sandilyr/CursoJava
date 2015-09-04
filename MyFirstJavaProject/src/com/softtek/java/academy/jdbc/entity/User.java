@@ -2,14 +2,15 @@ package com.softtek.java.academy.jdbc.entity;
 
 public class User {
 	
-	private int user_id;
+	private int userId;
 	private String username;
 	private String password;
 	private String name;
-	private	int user_role_id;
+	private	String userRoleId;
 	private String active;
 	
 	
+
 	
 	
 	@Override
@@ -20,8 +21,9 @@ public class User {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result
 				+ ((password == null) ? 0 : password.hashCode());
-		result = prime * result + user_id;
-		result = prime * result + user_role_id;
+		result = prime * result + userId;
+		result = prime * result
+				+ ((userRoleId == null) ? 0 : userRoleId.hashCode());
 		result = prime * result
 				+ ((username == null) ? 0 : username.hashCode());
 		return result;
@@ -50,9 +52,12 @@ public class User {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (user_id != other.user_id)
+		if (userId != other.userId)
 			return false;
-		if (user_role_id != other.user_role_id)
+		if (userRoleId == null) {
+			if (other.userRoleId != null)
+				return false;
+		} else if (!userRoleId.equals(other.userRoleId))
 			return false;
 		if (username == null) {
 			if (other.username != null)
@@ -70,15 +75,15 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User [user_id=" + user_id + ", username=" + username
+		return "User [user_id=" + userId + ", username=" + username
 				+ ", password=" + password + ", name=" + name
-				+ ", user_role_id=" + user_role_id + ", active=" + active + "]";
+				+ ", user_role_id=" + userRoleId + ", active=" + active + "]";
 	}
-	public int getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getUsername() {
 		return username;
@@ -98,11 +103,11 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getUser_role_id() {
-		return user_role_id;
+	public String getUserRoleId() {
+		return userRoleId;
 	}
-	public void setUser_role_id(int user_role_id) {
-		this.user_role_id = user_role_id;
+	public void setUserRoleId(String userRoleId) {
+		this.userRoleId = userRoleId;
 	}
 
 	
