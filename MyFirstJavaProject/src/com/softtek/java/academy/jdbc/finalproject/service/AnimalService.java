@@ -12,6 +12,12 @@ import com.softtek.java.academy.jdbc.finalproject.repository.AnimalRepository;
 
 public class AnimalService {
 	
+	/**
+	 * 
+	 * @param from
+	 * @param animalClass
+	 * @return
+	 */
 	
 	public static List<Animal> sublistAnimalsByClass(List<Animal> from, String animalClass){
 		
@@ -27,6 +33,12 @@ public class AnimalService {
 		return result;
 		
 	}
+	
+	/**
+	 * 
+	 * @param animalMap
+	 * @param key
+	 */
 	
 	public static void validateMap(Map<String, List<Animal>> animalMap, String key){
 		
@@ -68,13 +80,11 @@ public class AnimalService {
 		animalMap.put("Insects", insects);
 		animalMap.put("Arachnids", arachnids);
 	
-		validateMap(animalMap, "Mammals");
-		validateMap(animalMap, "Reptiles");
-		validateMap(animalMap, "Birds");
-		validateMap(animalMap, "Amphibians");
-		validateMap(animalMap, "Fish");
-		validateMap(animalMap, "Insects");
-		validateMap(animalMap, "Arachnids");
+		for (String key : animalMap.keySet()) {
+			System.out.println(key + ":");
+			validateMap(animalMap, key);
+			}
+	
 		
 	
 }

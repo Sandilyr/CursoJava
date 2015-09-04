@@ -12,6 +12,11 @@ import com.softtek.java.academy.jdbc.finalproject.entity.Animal;
 
 public class AnimalRepository {
 
+	/**
+	 * Connects with the DataBase and retrieve all the information from the table animals.
+	 * Returns a list of Animals with all the retrieved information.
+	 * @return the list of Animals
+	 */
 	public List<Animal> allAnimals() {
 
         final List<Animal> animals = new ArrayList<Animal>();
@@ -52,6 +57,13 @@ public class AnimalRepository {
         return animals;
     }
 
+
+	/**
+	 * Close the Connection to data base as well the ResultSet and PreparedStatement
+	 * @param resultSet  A ResultSet you want to close
+	 * @param preparedStatement  A PreparedStatement you want to close
+	 * @param connection  A Connection to the data base you want to close
+	 */
 
  private void close(ResultSet resultSet,
 	        PreparedStatement preparedStatement,
