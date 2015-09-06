@@ -36,7 +36,7 @@ public class AnimalRepository {
 	    	resultSet = preparedStatement.executeQuery();
       
             while (resultSet.next()) {
-            	Animal animal = new Animal();
+            	final Animal animal = new Animal();
             	animal.setName(resultSet.getString(1));
             	animal.setAnimalClass(resultSet.getString(2));
 	        	animal.setFamily(resultSet.getString(3));
@@ -94,3 +94,4 @@ public class AnimalRepository {
 	
 	
 }
+

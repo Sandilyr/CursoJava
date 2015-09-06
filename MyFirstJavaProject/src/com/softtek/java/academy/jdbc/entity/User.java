@@ -8,9 +8,7 @@ public class User {
 	private String name;
 	private	String userRoleId;
 	private String active;
-	
-	
-
+	 
 	
 	
 	@Override

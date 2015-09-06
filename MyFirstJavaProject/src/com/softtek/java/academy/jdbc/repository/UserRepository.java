@@ -60,7 +60,7 @@ public class UserRepository {
 	        Connection connection = DataSourceDB.getConnection();
 			final StringBuilder query = new StringBuilder();
 			query.append("SELECT user_id, username, password, name, user_role_id, active ");
-			query.append("FROM  ");
+			query.append("FROM user ");
 			//query.append("WHERE active='s'");
 			//query.append("ORDER by user_id DESC");
 			
